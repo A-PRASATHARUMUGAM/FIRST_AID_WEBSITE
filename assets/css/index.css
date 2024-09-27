@@ -1,31 +1,30 @@
 :root{
 
-  /* background color */
-    --bg-color-w:#ffffff;
-    --bg-color-b:#000000;
-  
+/* background color */
+  --bg-color-w:#ffffff;
+  --bg-color-b:#000000;
+
   /* Navigation color  */
-    --nav-btn:white;
-    --nav-bg:rgba(0, 0, 0,0.25);
-    --nav-log:#daf0ff;
-    --nav-btnHovcolor:white;
-    --nav-btnHovbg: rgba(138, 195, 234,0.5);
- 
+  --nav-log:#dac4b7;
+  --nav-bg:rgba(0, 0, 0,0.25);
+  --nav-btn:white;
+  --nav-btnHovbg:rgba(0, 171, 240,0.5);
+  --nav-btnHovcolor:white; 
 
-  /* text color  */
-    --text-color-w:#ffffff;
-    --text-color-b:#000000;
-    --text-color1:#ededed;
-    --text-color2:#f75551;
-  
-   
-  /* button color  */
-   --btn-color1:#00abf0;
-   --btn-color2:#f75551;
-  
-  }
+/* text color  */
+  --text-color-w:#ffffff;
+  --text-color-b:#000000;
+  --text-color1:#ededed;
+  --text-color2:#f75551;
+  --text-color3:#4c7f9d;
+  --text-color4:#136d9b;
 
-  
+/* button color  */
+ --btn-color1:#01b5fc;
+ --btn-color2:#f8302c;
+
+}
+
 *,
 ::before,::after{
     margin:0;
@@ -40,13 +39,14 @@
   a,a:visited,a:hover{
     text-decoration:none;
   }
-
+  /* Navigation Bar */
+  .navbar-container{
+      display: flex;
+      justify-content:space-between;
+      padding:10px;
+      background-color:var(--nav-bg);
+    }
   /* Naigation menu */
-  .header{
-    position: fixed;
-    left: 0;
-    right:0;
-  }
   .header-logo{
     font-family: cursive;
     margin-left: 20px;
@@ -81,91 +81,114 @@
  .hamburger-menu{
    display: none;
  }
-   /* Navigation Bar */
-   .navbar-container{
-    display: flex;
-    justify-content:space-between;
-    padding:10px;
-    background-color:var(--nav-bg);
-  }
   
-  body{
-  background-image: url(../images/contactbg.jpg);
+  
+body{
+  background-image: url(../images/homebg.jpg);
   background-repeat: no-repeat;
   background-size:cover;  
   background-position: center;
-  background-attachment:fixed;
+  background-attachment: fixed;
   font-family: cursive;
   font-size: 16px;
+      
   }
-
-/* section 1  contact form ************************************************************************************** */
+/* section **************************************************************** */
 
 .main-container{
   display: flex;
-  justify-content: start;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center ;
+  align-items: center; 
+  width: 100%;
+  height:90vh;
+
 }
-.form-container{
-  margin-top:50px;  
-}
-.form-title{
-  color: #017aee;
+
+.para-container{
   text-align: center;
-}
+  padding:40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
 
-.form-box{
-  margin:30px;
-  padding:15px;
-  border-radius:10px;
-  background-color: rgba(255, 255, 255, 0.25);
+}
+.para-title{
   text-align: center;
+  color: var(--text-color-w);
+  font-weight:bold;
+  font-size:5vw;
+  margin-bottom:30px;
 
 }
-.Firstname,
-.Email,
-.Mobileno,
-.Address,
-.State,
-.City,
-.whatpbm,
-.aboutwhatpbm{
-  margin: 10px 0px;
-  padding:10px;
-  border-radius:6px; 
-  border: none;
-  resize: none;
-  width: 210px;
-  
-}
-
-.whatpbm,
-.aboutwhatpbm {
-  width:100% ; 
+.para{
+  font-size:1.5vw;
+  color: var(--text-color-b);
+  line-height:2;
 
 }
-
-.aboutwhatpbm {
-  margin-bottom: 20px;
+.button-container{
+  margin-top:180px;
+  font-weight:bold;
 }
-
-.btn{
-  padding: 10px;
-  border: none;
-  background-color:#017aee;
+.container-button__primary {
+  padding: 15px;  
+  background-color: var(--btn-color1);
   color: white;
-  font-weight: bold;
-  font-size: 14px;
-  border-radius: 6px;
+  border-radius:8px;
+  animation: learnmore1 6s ease infinite;  
 }
-.btn:hover{
-   background-color:black ;
-   transition: 0.5s;
-   color: white;
-} 
+
+.container-button__secondary{
+  margin-left: 50px;
+  padding: 15px;  
+  background-color: var(--btn-color2);
+  color: white;
+  border-radius:8px;
+    animation: learnmore2 6s ease infinite;
+}
+.container-button__primary:hover{
+  border: 2px solid white;
+  padding: 8px;
+  transition: 0.5s;
 
 
-                                   /*****************************\
+}
+.container-button__secondary:hover{
+  border: 2px solid white;
+  padding: 8px;
+  transition: 0.5s;
+
+}
+@keyframes learnmore1 {
+
+  0%,100%{
+     background-color:var(--btn-color2);
+  
+   
+  }
+  60%
+  { 
+      background-color: var(--btn-color1);
+      color: white;
+  }
+}
+@keyframes learnmore2 {
+
+  0%,100%{
+     background-color:var(--btn-color1);
+
+  }
+  60%
+  { 
+      background-color: var(--btn-color2);
+      color: white;
+      
+  }
+}
+
+                                  /*****************************\
                                           #MEDIA 768px
                                   \*****************************/
 @media all and (max-width:768px){
@@ -189,7 +212,7 @@
     border-radius:10px;
     flex-direction: column;
     gap:10px;
-    width:80%;
+    width:60%;
     transition: all 300ms ease-in-out;
   }
   .header-showmenu{
@@ -240,22 +263,11 @@
  
  }
 
-/* section  */
-  .main-container{
-    justify-content:center;  
-  
-  }
 }
 
-@media all and (max-width:517px){
-
-    .header-links{
-      width: 80%;
-    }
-  
-  .whatpbm,
-  .aboutwhatpbm {
-    width:210px; 
-  
+@media all and (max-width:425px){
+  .header-links{
+    width: 80%;
   }
+  
 }
